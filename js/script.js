@@ -107,7 +107,7 @@ $(function() {
 				var el = $(e.target);
 				if (!el.hasClass("clicked")) {
 					showAnswer(el.attr("data-answer"));
-					el.text("");
+					el.html("&nbsp;");
 					el.addClass("clicked");
 				}
 			})
