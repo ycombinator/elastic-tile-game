@@ -65,18 +65,18 @@ $(function() {
 	// Setup header row
 	var headerRow = $("#headers thead tr");
 	var categoryIndex = 0;
-	$.each(data, function(category, answers) {
+	$.each(data, function(category, tiles) {
 		var headerCell = $("<th>").text(category.toUpperCase());
 		headerRow.append(headerCell);
 
 		// Setup answers rows
-		$.each(answers, function(rowIndex, answer) {
+		$.each(tiles, function(rowIndex, tile) {
 			if (!rows[rowIndex]) {
 				rows[rowIndex] = [];
 			}
 
 			if (!rows[rowIndex][categoryIndex]) {
-				rows[rowIndex][categoryIndex] = answer;
+				rows[rowIndex][categoryIndex] = tile;
 			}
 		});
 
@@ -85,14 +85,14 @@ $(function() {
 	});
 
 	var tbody = $("#cells tbody");
-	$.each(rows, function(rowIndex, columns) {
+	$.each(rows, function(rowIndex, tiles) {
 		var tr = $("<tr>");
-		$.each(columns, function(columnIndex, cell) {
+		$.each(tiles, function(columnIndex, tile) {
 			var td = $("<td>")
-				.text(cell.value)
+				.text(tile.value)
 				.attr("data-category-index", columnIndex)
 				.attr("data-row-index", rowIndex)
-				.attr("data-answer", cell.answer);
+				.attr("data-answer", tile.answer);
 
 			td.click(function(e) {
 				var el = $(e.target);
