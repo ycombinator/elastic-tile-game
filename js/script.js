@@ -12,7 +12,7 @@ $(function() {
 		answerDiv = $("#answer"),
 		answerTextDiv = $("#answer #text"),
 		answerTimerDiv = $("#answer #timer"),
-		timesUpAudio = new Audio("audio/times-up.mp3"),
+		timesUpAudio = new Audio("audio/times-up.wav"),
 		timerId;
 
 	var alertUser = function() {
