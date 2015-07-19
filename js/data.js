@@ -13,7 +13,11 @@ var data = {
 			"Reverse search"
 			]
 		},
-		{ value: 1000, answers: "Inter-node communication protocol" }
+		{ value: 1000, answers: [
+			"Inter-node communication protocol",
+			"Finite State Transducer (FST)"
+			]
+		}
 	],
 	"Logstash": [
 		{ value: 200, answers: "Filter plugin to parse text using regular expression patterns" },
