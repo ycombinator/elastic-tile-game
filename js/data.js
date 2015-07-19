@@ -1,32 +1,32 @@
 var data = {
 	"Elasticsearch": [
-		{ value: 200, answer: "A collection of similar documents" },
-		{ value: 400, answer: "A part of an index" },
-		{ value: 600, answer: "API that allows multiple operations to be performed at once" },
-		{ value: 1000, answer: "Inter-node communication protocol" }
+		{ value: 200, answers: "A collection of similar documents" },
+		{ value: 400, answers: "A part of an index" },
+		{ value: 600, answers: "API that allows multiple operations to be performed at once" },
+		{ value: 1000, answers: "Inter-node communication protocol" }
 	],
 	"Logstash": [
-		{ value: 200, answer: "Filter plugin to parse text using regular expression patterns" },
-		{ value: 400, answer: "Logstash implementation language" },
-		{ value: 600, answer: "Protocol used by Logstash Forwarder" },
-		{ value: 1000, answer: "Type of plugin that can change the representation of an event" }
+		{ value: 200, answers: "Filter plugin to parse text using regular expression patterns" },
+		{ value: 400, answers: "Logstash implementation language" },
+		{ value: 600, answers: "Protocol used by Logstash Forwarder" },
+		{ value: 1000, answers: "Type of plugin that can change the representation of an event" }
 	],
 	"Kibana": [
-		{ value: 200, answer: "" },
-		{ value: 400, answer: "" },
-		{ value: 600, answer: "" },
-		{ value: 1000, answer: "Allows custom formatting of fields" }
+		{ value: 200, answers: "" },
+		{ value: 400, answers: "" },
+		{ value: 600, answers: "" },
+		{ value: 1000, answers: "Allows custom formatting of fields" }
 	],
 	"Beats": [
-		{ value: 200, answer: "Provides realtime analytics for network protocols" },
-		{ value: 400, answer: "Library for building more beats" },
-		{ value: 600, answer: "" },
-		{ value: 1000, answer: "" }
+		{ value: 200, answers: "Provides realtime analytics for network protocols" },
+		{ value: 400, answers: "Library for building more beats" },
+		{ value: 600, answers: "" },
+		{ value: 1000, answers: "" }
 	],
 	"Commercial": [
-		{ value: 200, answer: "Elasticsearch as a service" },
-		{ value: 400, answer: "" },
-		{ value: 600, answer: "" },
-		{ value: 1000, answer: "" }
+		{ value: 200, answers: "Elasticsearch as a service" },
+		{ value: 400, answers: "" },
+		{ value: 600, answers: "" },
+		{ value: 1000, answers: "" }
 	]
 }

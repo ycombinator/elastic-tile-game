@@ -88,11 +88,20 @@ $(function() {
 	$.each(rows, function(rowIndex, tiles) {
 		var tr = $("<tr>");
 		$.each(tiles, function(columnIndex, tile) {
+
+			// Choose random answer for tile
+			var answers = tile.answers;
+			if (!Array.isArray(answers)) {
+				answers = [ answers ];
+			}
+			var randomIndex = Math.floor(answers.length * Math.random());
+			var answer = answers[randomIndex];
+
 			var td = $("<td>")
 				.text(tile.value)
 				.attr("data-category-index", columnIndex)
 				.attr("data-row-index", rowIndex)
-				.attr("data-answer", tile.answer);
+				.attr("data-answer", answer);
 
 			td.click(function(e) {
 				var el = $(e.target);
