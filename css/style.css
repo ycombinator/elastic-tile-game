@@ -36,6 +36,7 @@ td {
 		-2px 2px 0 black,
 		2px -2px 0 black,
 		-2px -2px 0 black;
+	cursor: pointer;
 }
 
 tbody td.clicked {
@@ -52,6 +53,7 @@ tbody td.clicked {
 	left: 1%;
 	right: 1%;
 	display: none;
+	cursor: pointer;
 }
 
 #answer #text {
