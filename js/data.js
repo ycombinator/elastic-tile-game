@@ -1,8 +1,18 @@
 var data = {
 	"Elasticsearch": [
-		{ value: 200, answers: "A collection of similar documents" },
+		{ value: 200, answers: [
+			"A collection of similar documents",
+			"Search library used internally by Elasticsearch",
+			"9200",
+			"9300"
+			]
+		},
 		{ value: 400, answers: "A part of an index" },
-		{ value: 600, answers: "API that allows multiple operations to be performed at once" },
+		{ value: 600, answers: [
+			"API that allows multiple operations to be performed at once",
+			"Reverse search"
+			]
+		},
 		{ value: 1000, answers: "Inter-node communication protocol" }
 	],
 	"Logstash": [
