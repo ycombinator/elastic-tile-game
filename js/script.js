@@ -12,9 +12,11 @@ $(function() {
 		answerDiv = $("#answer"),
 		answerTextDiv = $("#answer #text"),
 		answerTimerDiv = $("#answer #timer"),
+		timesUpAudio = new Audio("audio/times-up.mp3"),
 		timerId;
 
 	var alertUser = function() {
+		timesUpAudio.play();
 		answerTextDiv.html("SORRY, <br />TIME'S UP");
 	}
 
