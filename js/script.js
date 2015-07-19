@@ -1,22 +1,54 @@
+String.prototype.padLeft = function (paddingValue) {
+   return String(paddingValue + this).slice(-paddingValue.length);
+};
+
 $(function() {
 
-	var rows = [],
-		gameState = { numTilesRemaining : 0 };
+	// "Constants"
+	var TIMER_SECONDS = 15;
 
-	var answerDiv = $("#answer");
-	var answerTextSpan = $("#answer #text");
+	var rows = [],
+		gameState = { numTilesRemaining : 0 },
+		answerDiv = $("#answer"),
+		answerTextDiv = $("#answer #text"),
+		answerTimerDiv = $("#answer #timer"),
+		timerId;
+
+	var alertUser = function() {
+		answerTextDiv.html("SORRY, <br />TIME'S UP");
+	}
+
+	var startTimer = function() {
+		var secondsRemaining = TIMER_SECONDS;
+		answerTimerDiv.text(":" + secondsRemaining.toString().padLeft("00"));
+		timerId = setInterval(function() {
+			--secondsRemaining;
+			answerTimerDiv.text(":" + secondsRemaining.toString().padLeft("00"));
+
+			if (secondsRemaining === 0) {
+				clearInterval(timerId);
+				alertUser();
+			}
+		}, 1000);
+	}
+
+	var stopTimer = function() {
+		clearInterval(timerId);
+	}
 
 	var showAnswer = function(answer) {
 		if (!answer) {
 			answer = "(TBD, Sorry)";
 		}
-		answerTextSpan.text(answer.toUpperCase());
+		answerTextDiv.text(answer.toUpperCase());
 		answerDiv.show();
 		answerDiv.focus();
 		--gameState.numTilesRemaining;
+		startTimer();
 	};
 
 	var hideAnswer = function(e) {
+		stopTimer();
 		answerDiv.hide();
 		if (gameState.numTilesRemaining == 0) {
 			window.location.reload();

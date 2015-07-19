@@ -69,3 +69,12 @@ tbody td.clicked {
 		2px -2px 0 black,
 		-2px -2px 0 black;
 }
+
+#answer #timer {
+	position: absolute;
+	bottom: 1%;
+	right: 1%;
+	font-weight: 800;
+	font-size: 6em;
+	color: rgba(212, 216, 230, 0.4);
+}
