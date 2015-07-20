@@ -38,7 +38,12 @@ var data = {
 		{ value: 1000, answers: "" }
 	],
 	"Commercial": [
-		{ value: 200, answers: "Elasticsearch as a service" },
+		{ value: 200, answers: [
+			"Elasticsearch as a service",
+			"Alerting for Elasticsearch",
+			"Password protection for Elasticsearch"
+			]
+		},
 		{ value: 400, answers: "" },
 		{ value: 600, answers: "" },
 		{ value: 1000, answers: "" }
