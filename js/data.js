@@ -4,17 +4,25 @@ var data = {
 			"A collection of similar documents",
 			"Search library used internally by Elasticsearch",
 			"9200",
-			"9300"
+			"9300",
+			"The two types of shards"
 			]
 		},
-		{ value: 400, answers: "A part of an index" },
+		{ value: 400, answers: [
+		  "Part of an index",
+			"Default number of shards for an index",
+			"All primary shards active but not all replica shards active"
+			]
+		},
 		{ value: 600, answers: [
 			"API that allows multiple operations to be performed at once",
-			"Reverse search"
+			"Reverse search",
+			"Latest released version of Elasticsearch",
+			"Inter-node communication protocol"
 			]
 		},
 		{ value: 1000, answers: [
-			"Inter-node communication protocol",
+			"ceil(Number of replica shards / 2) + 1",
 			"Finite State Transducer (FST)"
 			]
 		}
