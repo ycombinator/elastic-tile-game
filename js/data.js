@@ -22,7 +22,7 @@ var data = {
 			]
 		},
 		{ value: 1000, answers: [
-			"ceil( num_replica_shards / 2 ) + 1",
+			"ceil( Number of replica shards / 2 ) + 1",
 			"Finite State Transducer (FST)"
 			]
 		}
