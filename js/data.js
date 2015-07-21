@@ -32,10 +32,27 @@ var data = {
 		{ value: 1000, answers: "Allows custom formatting of fields" }
 	],
 	"Beats": [
-		{ value: 200, answers: "Provides realtime analytics for network protocols" },
-		{ value: 400, answers: "Library for building more beats" },
-		{ value: 600, answers: "" },
-		{ value: 1000, answers: "" }
+		{ value: 200, answers: [
+      "Provides realtime analytics for network protocols",
+      "Programming language in which Packetbeat is written"
+      ]
+    },
+		{ value: 400, answers: [
+      "Platform for building more beats",
+      "Beat based on Logstash Forwarder",
+      "Beat that tracks CPU and memory statistics per process"
+      ]
+    },
+		{ value: 600, answers: [
+      "Configuration file format used by Packetbeat",
+      "Packetbeat stores the HTTP status code in this field"
+      ]
+    },
+		{ value: 1000, answers: [
+      "First database protocol supported by Packetbeat",
+      "Go library used by Packetbeat to sniff packets"
+      ]
+    }
 	],
 	"Commercial": [
 		{ value: 200, answers: [
