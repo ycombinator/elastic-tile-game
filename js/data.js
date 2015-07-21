@@ -44,10 +44,23 @@ var data = {
 		{ value: 1000, answers: "Type of plugin that can change the representation of an event" }
 	],
 	"Kibana": [
-		{ value: 200, answers: "" },
-		{ value: 400, answers: "" },
-		{ value: 600, answers: "" },
-		{ value: 1000, answers: "Allows custom formatting of fields" }
+		{ value: 200, answers: [
+			"Command to start the Kibana server on UNIX-like systems",
+			"Feature to automatically update the data shown in Kibana"
+			]
+		},
+		{ value: 400, answers: "The default time span in the Discover view" },
+		{ value: 600, answers: [
+			"Special Elasticsearch index where Kibana stores its data",
+			"The expression language used for searching",
+			"Allows custom formatting of fields"
+			]
+		},
+		{ value: 1000, answers: [
+			"Programming language in which the first version of Kibana was written",
+			"Library used by the number formatting template"
+			]
+		}
 	],
 	"Beats": [
 		{ value: 200, answers: [
