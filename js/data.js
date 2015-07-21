@@ -86,14 +86,17 @@ var data = {
     }
 	],
 	"Commercial": [
-		{ value: 200, answers: [
+		{ value: 200, answers: "Password protection for Elasticsearch" },
+		{ value: 400, answers: [
 			"Elasticsearch as a service",
-			"Alerting for Elasticsearch",
-			"Password protection for Elasticsearch"
+			"Development, Silver, Gold, and Platinum"
 			]
 		},
-		{ value: 400, answers: "" },
-		{ value: 600, answers: "" },
-		{ value: 1000, answers: "" }
+		{ value: 600, answers: [
+			"Alerting for Elasticsearch",
+			"Starting rate for a Found cluster"
+			]
+		},
+		{ value: 1000, answers: "Subscription level not offering phone support" }
 	]
 }
