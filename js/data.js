@@ -28,9 +28,19 @@ var data = {
 		}
 	],
 	"Logstash": [
-		{ value: 200, answers: "Filter plugin to parse text using regular expression patterns" },
-		{ value: 400, answers: "Logstash implementation language" },
-		{ value: 600, answers: "Protocol used by Logstash Forwarder" },
+		{ value: 200, answers: [
+			"Filter plugin to parse text using regular expression patterns",
+			"Input, Filter, Output, and Codec"
+			]
+		},
+		{ value: 400, answers: [
+			"Programming language in which Logstash is written"
+			]
+		},
+		{ value: 600, answers: [
+		  "Protocol used by Logstash Forwarder"
+			]
+		},
 		{ value: 1000, answers: "Type of plugin that can change the representation of an event" }
 	],
 	"Kibana": [
