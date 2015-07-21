@@ -86,10 +86,14 @@ var data = {
     }
 	],
 	"Commercial": [
-		{ value: 200, answers: "Password protection for Elasticsearch" },
+		{ value: 200, answers: [
+			"Password protection for Elasticsearch",
+			"Elasticsearch as a service"
+			]
+		},
 		{ value: 400, answers: [
-			"Elasticsearch as a service",
-			"Development, Silver, Gold, and Platinum"
+			"Development, Silver, Gold, and Platinum",
+			"Free trial period for Found"
 			]
 		},
 		{ value: 600, answers: [
