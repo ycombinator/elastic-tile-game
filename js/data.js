@@ -41,7 +41,7 @@ var data = {
 		  "Protocol used by Logstash Forwarder"
 			]
 		},
-		{ value: 1000, answers: "Type of plugin that can change the representation of an event" }
+    { value: 1000, answers: "Size of the input -> filter queue" }
 	],
 	"Kibana": [
 		{ value: 200, answers: [
