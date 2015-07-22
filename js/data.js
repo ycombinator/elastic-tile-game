@@ -9,16 +9,16 @@ var data = {
 			]
 		},
 		{ value: 400, answers: [
-		  "Part of an index",
+		  "An index is made of multiple ______",
 			"Default number of shards for an index",
-			"All primary shards active but not all replica shards active"
+			"API that allows multiple operations to be performed at once"
 			]
 		},
 		{ value: 600, answers: [
-			"API that allows multiple operations to be performed at once",
-			"Reverse search",
+      "Search reversed",
 			"Latest released version of Elasticsearch",
-			"Inter-node communication protocol"
+			"Inter-node communication protocol",
+			"All primary shards active but not all replica shards active"
 			]
 		},
 		{ value: 1000, answers: [
