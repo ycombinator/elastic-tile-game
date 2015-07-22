@@ -30,6 +30,9 @@ $(function() {
 			if (secondsRemaining === 0) {
 				clearInterval(timerId);
 				alertUser();
+        setTimeout(function() {
+          answerDiv.hide()
+        }, 3000);
 			}
 		}, 1000);
 	}
