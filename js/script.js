@@ -5,7 +5,7 @@ String.prototype.padLeft = function (paddingValue) {
 $(function() {
 
 	// "Constants"
-	var TIMER_SECONDS = 15;
+	var TIMER_SECONDS = 30;
 
 	var rows = [],
 		gameState = { numTilesRemaining : 0 },
