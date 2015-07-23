@@ -99,7 +99,7 @@ var data = {
 			]
 		},
 		{ value: 600, answers: [
-			"This plugin enables for alerting and notifications on Elasticsearch data",
+			"This plugin enables alerting and notifications on Elasticsearch data",
 			"The starting rate for a Found cluster is $____/month"
 			]
 		},
