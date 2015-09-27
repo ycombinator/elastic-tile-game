@@ -2,6 +2,8 @@ body {
 	background-color: #7F7F7F;
 }
 
+/* --- Gameboard CSS --- */
+
 table {
 	background-color: #000000;
 	margin-left: auto;
@@ -77,4 +79,26 @@ tbody td.clicked {
 	font-weight: 800;
 	font-size: 6em;
 	color: rgba(212, 216, 230, 0.4);
+}
+
+/* --- Answers CSS --- */
+body.answers {
+	font-family: "Arial", sans-serif;
+	background-color: inherit;
+}
+
+body.answers dt,dd {
+	font-size: 1.25em;
+}
+
+body.answers dd {
+	margin-bottom: 1em;
+}
+
+body.answers h2 {
+	margin-top: 2.5em;
+}
+
+body.answers h2:first {
+	margin-top: inherit;
 }
