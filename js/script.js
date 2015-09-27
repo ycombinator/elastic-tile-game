@@ -138,6 +138,34 @@ $(function() {
   	});
   }
 
+  var renderAnswers = function(data) {
+    var bodyEl = $("body");
+    bodyEl.html('');
+    bodyEl.addClass('answers');
+
+    for (categoryName in data) {
+      var categoryLevels = data[categoryName];
+      for (categoryLevelIndex in categoryLevels) {
+        var definitionListEl = $("<dl>");
+        var categoryLevel = categoryLevels[categoryLevelIndex];
+        var level = categoryLevel.value;
+        var answers = categoryLevel.answers;
+
+        var levelHeaderEl = $("<h2>").html(categoryName + " | " + level);
+        bodyEl.append(levelHeaderEl);
+
+        for (answerIndex in answers) {
+          var answer = answers[answerIndex];
+          var definitionTermEl = $("<dt>").html(answer.answer);
+          var definitionEl = $("<dd>").html(answer.question);
+          definitionListEl.append(definitionTermEl);
+          definitionListEl.append(definitionEl);
+        }
+        bodyEl.append(definitionListEl);
+      }
+    }
+  }
+
   // Passphrase check
   var passphrase = window.localStorage.getItem("passphrase") || promptForPassphrase();
   window.localStorage.setItem("passphrase", passphrase);
@@ -149,7 +177,14 @@ $(function() {
     var decryptedData = decryptData(encryptedData, passphrase);
     data = JSON.parse(decryptedData);
 
-    renderGameBoard(data);
+    // Routing logic
+    switch (window.location.hash) {
+      case "#answers":
+        renderAnswers(data);
+        break;
+      default:
+        renderGameBoard(data);
+    }
 
   });
 
