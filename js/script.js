@@ -168,13 +168,19 @@ $(function() {
 
   // Passphrase check
   var passphrase = window.localStorage.getItem("passphrase") || promptForPassphrase();
-  window.localStorage.setItem("passphrase", passphrase);
 
   // Decode data
   $.ajax(ENCRYPTED_DATA_FILE_URI)
   .complete(function(data) {
     var encryptedData = data.responseText;
-    var decryptedData = decryptData(encryptedData, passphrase);
+    try {
+      var decryptedData = decryptData(encryptedData, passphrase);
+    } catch (e) {
+      // Most likely a bad passphrase, retry
+      window.location.href = window.location.href;
+      return false;
+    }
+    window.localStorage.setItem("passphrase", passphrase);
     data = JSON.parse(decryptedData);
 
     // Routing logic
