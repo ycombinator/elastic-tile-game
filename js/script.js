@@ -5,7 +5,8 @@ String.prototype.padLeft = function (paddingValue) {
 $(function() {
 
 	// "Constants"
-	var TIMER_SECONDS = 30;
+	var TIMER_SECONDS = 30,
+    ENCRYPTED_DATA_FILE_URI = '/js/data.encrypted.json';
 
 	var rows = [],
 		gameState = { numTilesRemaining : 0 },
@@ -13,7 +14,9 @@ $(function() {
 		answerTextDiv = $("#answer #text"),
 		answerTimerDiv = $("#answer #timer"),
 		timesUpAudio = new Audio("audio/times-up.wav"),
-		timerId;
+		timerId,
+    passphrase,
+    data;
 
 	var alertUser = function() {
 		timesUpAudio.play();
@@ -67,60 +70,81 @@ $(function() {
 		}
 	});
 
-	// Setup header row
-	var headerRow = $("#headers thead tr");
-	var categoryIndex = 0;
-	$.each(data, function(category, tiles) {
-		var headerCell = $("<th>").text(category.toUpperCase());
-		headerRow.append(headerCell);
+  var promptForPassphrase = function() {
+    return window.prompt("Passphrase?");
+  }
 
-		// Setup answers rows
-		$.each(tiles, function(rowIndex, tile) {
-			if (!rows[rowIndex]) {
-				rows[rowIndex] = [];
-			}
+  var decryptData = function(encryptedData, passphrase) {
+    return CryptoJS.AES.decrypt(encryptedData, passphrase).toString(CryptoJS.enc.Utf8);
+  }
 
-			if (!rows[rowIndex][categoryIndex]) {
-				rows[rowIndex][categoryIndex] = tile;
-			}
-		});
+  // Passphrase check
+  var passphrase = window.localStorage.getItem("passphrase") || promptForPassphrase();
+  window.localStorage.setItem("passphrase", passphrase);
 
-		++categoryIndex;
+  // Decode data
+  $.ajax(ENCRYPTED_DATA_FILE_URI)
+  .complete(function(data) {
+    var encryptedData = data.responseText;
+    var decryptedData = decryptData(encryptedData, passphrase);
+    data = JSON.parse(decryptedData);
 
-	});
+  	// Setup header row
+  	var headerRow = $("#headers thead tr");
+  	var categoryIndex = 0;
+  	$.each(data, function(category, tiles) {
+  		var headerCell = $("<th>").text(category.toUpperCase());
+  		headerRow.append(headerCell);
 
-	var tbody = $("#cells tbody");
-	$.each(rows, function(rowIndex, tiles) {
-		var tr = $("<tr>");
-		$.each(tiles, function(columnIndex, tile) {
+  		// Setup answers rows
+  		$.each(tiles, function(rowIndex, tile) {
+  			if (!rows[rowIndex]) {
+  				rows[rowIndex] = [];
+  			}
 
-			// Choose random answer for tile
-			var answers = tile.answers;
-			if (!Array.isArray(answers)) {
-				answers = [ answers ];
-			}
-			var randomIndex = Math.floor(answers.length * Math.random());
-			var answer = answers[randomIndex];
+  			if (!rows[rowIndex][categoryIndex]) {
+  				rows[rowIndex][categoryIndex] = tile;
+  			}
+  		});
 
-			var td = $("<td>")
-				.text(tile.value)
-				.attr("data-category-index", columnIndex)
-				.attr("data-row-index", rowIndex)
-				.attr("data-answer", answer);
+  		++categoryIndex;
 
-			td.click(function(e) {
-				var el = $(e.target);
-				if (!el.hasClass("clicked")) {
-					showAnswer(el.attr("data-answer"));
-					el.html("&nbsp;");
-					el.addClass("clicked");
-				}
-			})
-			tr.append(td);
-			++gameState.numTilesRemaining;
+  	});
 
-		});
-		tbody.append(tr);
-	});
+  	var tbody = $("#cells tbody");
+  	$.each(rows, function(rowIndex, tiles) {
+  		var tr = $("<tr>");
+  		$.each(tiles, function(columnIndex, tile) {
+
+  			// Choose random answer for tile
+  			var answers = tile.answers;
+  			if (!Array.isArray(answers)) {
+  				answers = [ answers ];
+  			}
+  			var randomIndex = Math.floor(answers.length * Math.random());
+  			var answer = answers[randomIndex].answer;
+
+  			var td = $("<td>")
+  				.text(tile.value)
+  				.attr("data-category-index", columnIndex)
+  				.attr("data-row-index", rowIndex)
+  				.attr("data-answer", answer);
+
+  			td.click(function(e) {
+  				var el = $(e.target);
+  				if (!el.hasClass("clicked")) {
+  					showAnswer(el.attr("data-answer"));
+  					el.html("&nbsp;");
+  					el.addClass("clicked");
+  				}
+  			})
+  			tr.append(td);
+  			++gameState.numTilesRemaining;
+
+  		});
+  		tbody.append(tr);
+  	});
+
+  });
 
 });
