@@ -78,16 +78,8 @@ $(function() {
     return CryptoJS.AES.decrypt(encryptedData, passphrase).toString(CryptoJS.enc.Utf8);
   }
 
-  // Passphrase check
-  var passphrase = window.localStorage.getItem("passphrase") || promptForPassphrase();
-  window.localStorage.setItem("passphrase", passphrase);
+  var renderGameBoard = function(data) {
 
-  // Decode data
-  $.ajax(ENCRYPTED_DATA_FILE_URI)
-  .complete(function(data) {
-    var encryptedData = data.responseText;
-    var decryptedData = decryptData(encryptedData, passphrase);
-    data = JSON.parse(decryptedData);
 
   	// Setup header row
   	var headerRow = $("#headers thead tr");
@@ -144,6 +136,20 @@ $(function() {
   		});
   		tbody.append(tr);
   	});
+  }
+
+  // Passphrase check
+  var passphrase = window.localStorage.getItem("passphrase") || promptForPassphrase();
+  window.localStorage.setItem("passphrase", passphrase);
+
+  // Decode data
+  $.ajax(ENCRYPTED_DATA_FILE_URI)
+  .complete(function(data) {
+    var encryptedData = data.responseText;
+    var decryptedData = decryptData(encryptedData, passphrase);
+    data = JSON.parse(decryptedData);
+
+    renderGameBoard(data);
 
   });
 
