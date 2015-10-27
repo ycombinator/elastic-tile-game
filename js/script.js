@@ -6,7 +6,7 @@ $(function() {
 
 	// "Constants"
 	var TIMER_SECONDS = 30,
-    ENCRYPTED_DATA_FILE_URI = '/js/data.encrypted.json';
+    ENCRYPTED_DATA_FILE_URI = 'js/data.encrypted.json';
 
 	var rows = [],
 		gameState = { numTilesRemaining : 0 },
