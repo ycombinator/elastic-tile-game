@@ -51,7 +51,7 @@ you. To view this answer key:
 1. Visit http://ycombinator.github.io/elastic-tile-game/#answers
 
 2. A passphrase prompt will appear. The host must enter this passphrase. This is the same passphrase used to encrypt the
-data for the game (see the ["To add/change data" section](#to-add-change-data) below).
+data for the game (see the ["Adding answers to the game" section](#adding-answers-to-the-game) below).
 
 3. When the correct passphrase is entered, the answer key will appear.
 
