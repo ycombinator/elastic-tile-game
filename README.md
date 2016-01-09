@@ -3,6 +3,9 @@ The purpose of the game is to educate players in various aspects of the Elastic 
 
 ## Playing the game
 
+_Note: the following instructions are guidelines on how to play the game based on how we've been able to successfully
+play this game in the past. Please read through these but feel absolutely free to hack these to fit your situation best!_
+
 ### Setup
 
 This game must be played in person. A typical setup would involve showing the game board on a large screen or projector
