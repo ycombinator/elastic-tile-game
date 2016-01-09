@@ -70,14 +70,12 @@ associated questions.
 2. Make the desired additions/changes to this data file.
 
 3. Encrypt the file.
-
 ```sh
 cd elastic-tile-game/js
 node encrypt-data.js <PASSPHRASE> # Ask @ycombinator about the passphrase
 ```
 
 4. Commit encrypted data file, `data.encrypted.json`.
-
 ```sh
 git add data.encrypted.json
 git commit -m '<COMMIT MESSAGE>'
