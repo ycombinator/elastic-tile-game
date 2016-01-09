@@ -22,7 +22,7 @@ or game organizers), the player may win a prize from the host/organizers.
 1. To start the game, the host must visit http://ycombinator.github.io/elastic-tile-game/.
 
 2. A passphrase prompt will appear. The host must enter this passphrase. This is the same passphrase used to encrypt the
-data for the game (see the ["Adding answers to the game" section](#adding-answers-to-the-game) below).
+data for the game (see the [_Adding answers to the game_ section](#adding-answers-to-the-game) below).
 
 3. When the correct passphrase is entered, the game board will be shown. It contains columns for various categories. Each
 column contains cells of various point levels (200, 400, etc.).
@@ -36,7 +36,7 @@ of paper. Randomly choose a player to begin.
 
 7. The player has 30 seconds to say the question associated with the answer shown on the screen. The player can take multiple guesses.
 
-8. If the player says the correct question (see the ["checking answers" section](#checking-answers) below if you are the host) within the allocated 30 seconds,
+8. If the player says the correct question (see the [_Checking answers_ section](#checking-answers) below if you are the host) within the allocated 30 seconds,
 the host should click anywhere outside the answer box overlay to return to the game board. Add the point level for this answer against
 the player's name. The player can continue their turn. Return to step 5.
 
@@ -54,7 +54,7 @@ you. To view this answer key:
 1. Visit http://ycombinator.github.io/elastic-tile-game/#answers
 
 2. A passphrase prompt will appear. The host must enter this passphrase. This is the same passphrase used to encrypt the
-data for the game (see the ["Adding answers to the game" section](#adding-answers-to-the-game) below).
+data for the game (see the [_Adding answers to the game_ section](#adding-answers-to-the-game) below).
 
 3. When the correct passphrase is entered, the answer key will appear.
 
