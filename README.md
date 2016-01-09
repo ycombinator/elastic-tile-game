@@ -76,7 +76,7 @@ associated questions.
    ```
 
 4. Commit encrypted data file, `data.encrypted.json`.
-```sh
-git add data.encrypted.json
-git commit -m '<COMMIT MESSAGE>'
-```
+   ```sh
+   git add data.encrypted.json
+   git commit -m '<COMMIT MESSAGE>'
+   ```
